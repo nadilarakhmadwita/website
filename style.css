@@ -1,0 +1,773 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    /* Mode Terang (Default) */
+    --bg-gradient: linear-gradient(135deg, #99b4f3 0%, #6f8fd8 50%, #465a88 100%);
+    --text-color: #17191c;
+    --nav-bg: rgba(41, 52, 78, 0.95);
+    --box-bg: rgba(255, 255, 255, 0.1);
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Warna untuk Mode Gelap */
+.dark-mode {
+    /* Mode Gelap */
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    --text-color: #f1f5f9;
+    --nav-bg: rgba(15, 23, 42, 0.98);
+    --box-bg: rgba(0, 0, 0, 0.4);
+    --shadow: rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    /* Memastikan background minimal setinggi layar */
+
+    /* Gradasi dari pojok kiri atas ke kanan bawah */
+    background: linear-gradient(135deg,
+            #5985ec 0%,
+            /* Biru muda */
+            #535fdf 50%,
+            /* Biru medium */
+            #28082b 100%
+            /* Biru gelap */
+        );
+
+    background-attachment: fixed;
+    /* KUNCI: Supaya background tidak ikut tergulung saat scroll */
+    color: rgb(39, 34, 34);
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+        top: 20px;
+        /* Jarak dari atas */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Biar dia di tengah-tengah */
+        width: 90%;
+        /* Tidak full biar kelihatan melayang */
+        max-width: 1200px;
+        background: rgba(255, 255, 255, 0.9);
+        /* Putih transparan */
+        backdrop-filter: blur(10px);
+        padding: 10px 30px;
+        border-radius: 50px;
+        /* Bikin ujungnya bulat (capsule) */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10000;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(11, 30, 114);
+    text-decoration: none;
+}
+
+/* MENU */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: rgb(6, 3, 61);
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #020303;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.social-icons a {
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #38bdf8;
+    transform: translateY(-3px);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 80px;
+
+    padding: 200px 10% 50px;
+}
+
+.hero-image img {
+    width: 320px;
+    height: 320px;
+
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+/* NAMA */
+
+.hero-content h1 {
+    font-size: 80px;
+    line-height: 1.2;
+    animation: slideRight 1.5s ease;
+    transition: 0.8s;
+
+}
+
+@keyframes slideRight {
+
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* PARAGRAF */
+
+.hero-content p {
+
+    margin-top: 30px;
+    margin-left: 0;
+    margin-right: auto;
+
+    font-size: 25px;
+    line-height: 1.7;
+
+    color: #17191c;
+    width: 1200px;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.05);
+
+    padding: 25px 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(5px);
+    animation: fadeUp 2s ease;
+    animation-delay: 1.5s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= ABOUT ================= */
+
+
+about-section {
+    padding: 80px 5%;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(135deg, #5b86e5, #360940);
+}
+
+.glass-box {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    max-width: 1400px;
+    width: 99vw;
+    margin: 0 auto;
+}
+
+.text-side {
+    flex: 1;
+    min-width: 0;
+    /* Teks lebih lebar */
+}
+
+.text-side h2 {
+    font-size: 80px;
+    /* Ukuran besar seperti di gambar */
+    color: #2d2d2d;
+    /* Warna gelap untuk judul */
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.text-side p {
+    color: #1a1a1a;
+    /* Warna teks isi */
+    font-size: 25px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.photo-side {
+flex-shrink: 0;
+width: 500px;
+display: flex;
+justify-content: center;
+}
+
+.frame {
+    width: 100px;
+    max-width: 600px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 0px solid #ffffff;
+    /* Garis biru cahaya */
+}
+
+.frame img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.text-side {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 968px) {
+    .glass-box {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+        width: 95%;
+    }
+
+    .photo-side {
+        justify-content: center;
+        order: -1;
+        /* Foto pindah ke atas di HP */
+    }
+
+    .text-side h2 {
+        font-size: 50px;
+    }
+}
+
+.about-section h2 {
+    font-size: 70px;
+    margin-bottom: 3px;
+}
+
+/* EXPERIENCES */
+
+.experiences-section {
+    width: 100%;
+    padding: 80px 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experiences-container {
+    display: flex;
+    justify-content: center;
+    /* Kotak kumpul di tengah */
+    align-items: stretch;
+    /* Biar tinggi kotak sama semua (rapi) */
+    gap: 20px;
+    /* Jarak antar kotak */
+    width: 50%;
+    /* Pakai hampir seluruh lebar layar */
+    max-width: 1000px;
+    /* Batas maksimal biar gak terlalu melar di layar gede */
+    flex-wrap: wrap;
+}
+
+
+.experiences-section h2 {
+    font-size: 60px;
+    margin-bottom: 40px;
+    text-align: right;
+}
+
+.glass-box:hover {
+    transform: translateY(-5px);
+}
+
+.experience-item h3 {
+    font-size: 26px;
+    color: #00050b;
+    margin-bottom: 10px;
+}
+
+.experience-item span {
+    color: rgb(255, 255, 255);
+    /* Warna abu-abu terang */
+    font-size: 20px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* TEXT PARAGRAF */
+.experience-item p {
+    font-size: 25px;
+    line-height: 1.7;
+    color: rgba(5, 5, 5, 0.9);
+    text-align: justify;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+
+
+/* STAGE */
+
+.stages img {
+    width: 100%;
+    border-radius: 30px;
+    margin-top: 100px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    height: 420px;
+    object-fit: cover;
+
+    border-radius: 25px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* GAMBAR */
+.stages img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(70%);
+
+    border-radius: 25px;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.stages img:hover {
+    transform: scale(1.03);
+    filter: brightness(85%);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(84, 75, 75, 0.25);
+}
+
+/* TEXT DI BAWAH GAMBAR */
+.overlay {
+    padding: 30px;
+    background: #99b4f3;
+    color: white;
+
+    border-radius: 20px;
+    margin: -50px 20px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(6px);
+}
+
+
+.overlay {
+    padding: 30px;
+    background: rgba(14, 28, 56, 0.85);
+    color: white;
+
+    border-radius: 20px;
+    margin: -50px 20px 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+    backdrop-filter: blur(8px);
+}
+
+.overlay:hover {
+    transform: translateY(-5px);
+    transition: 0.3s ease;
+}
+
+
+
+
+.stages {
+    padding: 120px 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* CARD STAGE */
+.stage-card {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+/* GAMBAR */
+.stage-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: transform 0.4s ease;
+}
+
+.stage-card img:hover {
+    transform: scale(1.30);
+}
+
+/* OVERLAY */
+.stage-card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 25px;
+    background: rgba(164, 175, 196, 0.85);
+    color: white;
+
+    backdrop-filter: blur(6px);
+}
+
+.btn-doc {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #99b4f3);
+    color: #ffffff;
+
+    text-decoration: none;
+    border-radius: 14px;
+
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+
+    box-shadow: 0 10px 25px rgba(58, 151, 244, 0.25);
+
+    transition: all 0.3s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-doc:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+    background: linear-gradient(135deg, #1f3a68, #2c5aa0);
+}
+
+.btn-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+    margin-top: 15px;
+
+    background: linear-gradient(135deg, #0e1c38, #1f3a68);
+    color: #ffffff;
+
+    text-decoration: none;
+    border-radius: 14px;
+
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+
+    transition: all 0.3s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-link:hover {
+    background: #f1eaea;
+    transform: translateY(-2px);
+}
+
+
+#competences {
+    width: 100%;
+    padding: 120px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 80px;
+    color: white;
+}
+
+
+section {
+    margin-bottom: 80px;
+    scroll-margin-top: 100px;
+}
+
+.competence-card {
+    text-align: left;
+}
+
+.competence-card p {
+    text-align: justify;
+}
+
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+.footer {
+    width: 100%;
+    padding: 60px 10%;
+    text-align: center;
+
+    background: #465a88;
+    backdrop-filter: blur(6px);
+
+    border-top: 1px solid #99b4f3;
+}
+
+.footer {
+    width: 100%;
+    padding: 40px 0;
+    margin-top: 100px;
+    /* Memberi jarak dari konten terakhir agar tidak terlalu mepet */
+    background: transparent;
+    /* Memastikan background utama terlihat tembus */
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Garis halus tipis agar tetap ada batas elegan */
+    color: rgba(255, 255, 255, 0.7);
+    /* Warna teks agak redup supaya tidak mencolok */
+}
+
+.footer p {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.footer-contact {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    /* Jarak antara email dan LinkedIn */
+}
+
+.footer-contact a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-contact a:hover {
+    opacity: 0.6;
+    /* Efek hover halus */
+}
+
+/* 1. Memperbesar Judul Utama "Competences" */
+.competences-section .section-title {
+    font-size: 90px !important;
+    /* Ukuran besar */
+    font-weight: bold !important;
+    color: rgb(0, 0, 0) !important;
+    margin-bottom: 50px !important;
+    display: block !important;
+}
+
+/* 2. Mengubah Background Kotak dan Warna Teks jadi Hitam */
+.competences-section .glass-box {
+    background: rgba(255, 255, 255, 0.25) !important;
+    /* Warna putih transparan agar teks hitam jelas */
+    border-radius: 40px !important;
+    padding: 40px !important;
+    margin-bottom: 30px !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 3. Paksa Judul (h3) dan Paragraf (p) di dalam Competences jadi HITAM */
+.competences-section .competence-item h3 {
+    color: #000000 !important;
+    /* Judul Kompetensi Hitam */
+    font-size: 28px !important;
+    font-weight: bold !important;
+    margin-bottom: 15px !important;
+}
+
+.competences-section .competence-item p {
+    color: #000000 !important;
+    /* Teks Paragraf Hitam */
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+    text-align: justify !important;
+    /* Rata kanan kiri agar rapi */
+}
+
+/* 4. Styling Tombol Link agar teksnya juga hitam */
+.competences-section .btn-doc,
+.competences-section .btn-link {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.1);
+    color: #000000 !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+/* --- 1. JUDUL UTAMA ENGAGEMENTS --- */
+.Engangements-section h2 {
+    font-size: 80px !important;
+    /* Ukuran besar konsisten dengan À propos & Competences */
+    font-weight: bold !important;
+    color: rgb(0, 0, 0) !important;
+    margin-bottom: 30px !important;
+    text-align: right;
+}
+
+/* --- 2. KOTAK PEMBUNGKUS (Class .job) --- */
+/* Kita buat efek glassmorphism yang senada tapi teks tetap putih agar elegan */
+.Engangements-section .job {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 50px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+/* --- 3. TEKS PARAGRAF --- */
+.Engangements-section .job p {
+    color: #000000 !important;
+    /* Teks putih agar kontras dengan background gelap */
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    /* Rata kiri-kanan agar rapi */
+    margin-bottom: 25px;
+}
+
+/* --- 4. TOMBOL LINK (LinkedIn & Instagram) --- */
+.Engangements-section .btn-link {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2);
+    color: rgb(0, 0, 0) !important;
+    padding: 12px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.Engangements-section .btn-link:hover {
+    background: white;
+    color: black !important;
+    /* Efek saat kursor menempel */
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 5. RESPONSIVE (Untuk HP) --- */
+@media (max-width: 768px) {
+    .Engangements-section h2 {
+        font-size: 50px !important;
+    }
+
+    .Engangements-section .job {
+        padding: 30px;
+    }
+}
